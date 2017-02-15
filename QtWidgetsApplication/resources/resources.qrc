@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/application/application.png</file>
+
+        <file>icons/qt-brand/@large/Built_with_Qt_logo_RGB_vertical.png</file>
+        <file>icons/qt-brand/@large/qt_logo_green_rgb.png</file>
+
+        <file>icons/qt-brand/@1024px/Built_with_Qt_logo_RGB_vertical.png</file>
+        <file>icons/qt-brand/@1024px/qt_logo_green_rgb.png</file>
+
+        <file>icons/qt-brand/@16px/Built_with_Qt_logo_RGB_vertical.png</file>
+        <file>icons/qt-brand/@16px/qt_logo_green_rgb.png</file>
+
+        <file>icons/breeze/@16px/application-exit.svg</file>
+        <file>icons/breeze/@16px/help-about.svg</file>
+    </qresource>
+</RCC>
