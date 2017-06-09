@@ -107,6 +107,6 @@ SOURCES += \
   sources/utils/utils.cxx
 
 HEADERS += \
-  sources/constants.hxx \
+  sources/config/application.hxx \
   sources/definitions.hxx \
   sources/utils/utils.hxx

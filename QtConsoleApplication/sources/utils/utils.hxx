@@ -9,7 +9,7 @@
 
 namespace Utils
 {
-  QCoreApplication * makeApplication (int & argc, char ** argv);
+  QCoreApplication * makeApplication (int & argc, char * argv[]);
 }
 
 

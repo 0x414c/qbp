@@ -1,13 +1,13 @@
-﻿#include "mainwindow.hxx"
-#include "ui_mainwindow.h"
-
-#include <QApplication>
+﻿#include <QApplication>
 #include <QEvent>
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QWidget>
 
-#include "../constants.hxx"
+#include "main-window.hxx"
+#include "ui_main-window.h"
+
+#include "../config/main-window.hxx"
 #include "../definitions.hxx"
 
 
@@ -19,7 +19,7 @@ namespace Widgets
   {
     ui_->setupUi (this);
 
-    setDefaults ();
+    configure_ ();
   }
 
 
@@ -30,13 +30,13 @@ namespace Widgets
 
 
   void
-  MainWindow::setDefaults (void)
+  MainWindow::configure_ (void)
   {
-    using namespace Constants::Gui;
+    using namespace Config::Widgets::MainWindow;
 
 
-    setWindowTitle (WindowTitle);
-    setWindowFilePath (FilePath);
+    setWindowTitle (Defaults::Window_title);
+    setWindowFilePath (Defaults::File_path);
     setWindowModified (true);
   }
 
@@ -64,46 +64,46 @@ namespace Widgets
 
 
   void
-  MainWindow::on_action_Quit_triggered (void)
+  MainWindow::on_quit_action_triggered (void)
   {
     QApplication::quit ();
   }
 
 
-  // TODO: !~ Move help text to separate file `help.inc'.
+  // TODO: [1;0] Move help text to separate file `help.inc'.
   void
-  MainWindow::on_action_AboutApplication_triggered (void)
+  MainWindow::on_about_application_action_triggered (void)
   {
     QMessageBox::about (
       this,
       QStringLiteral ("About Application"),
       QStringLiteral (
         "<h3><b>"
-        __QBP_DEFINE_PREFIX___APP_NAME
+        __QBP_MACRO_PREFIX___APP_DISPLAY_NAME
         " ver. "
-        __QBP_DEFINE_PREFIX___APP_VERSION
+        __QBP_MACRO_PREFIX___APP_VERSION
         "</b></h3>"
         "Build date: "
-        __QBP_DEFINE_PREFIX___APP_BUILD_DATE
+        __QBP_MACRO_PREFIX___APP_BUILD_DATE
         "<br>"
         "Build time: "
-        __QBP_DEFINE_PREFIX___APP_BUILD_TIME
+        __QBP_MACRO_PREFIX___APP_BUILD_TIME
         "<br><br>"
-        __QBP_DEFINE_PREFIX___APP_DESCRIPTION
+        __QBP_MACRO_PREFIX___APP_DESCRIPTION
         "<hr>"
-        "This software uses:"
+        "This application uses:"
         "<ul>"
-        "<li><a href=\"http://www.qt.io/\">Qt (ver. "
-        __QBP_DEFINE_PREFIX___QT_VERSION
+        "<li><a href=\"http://www.qt.io/\">Qt toolkit (ver. "
+        __QBP_MACRO_PREFIX___QT_VERSION
         ")</a></li>"
         "<li><a href=\"http://api.kde.org/frameworks/breeze-icons/html/\">"
         "Breeze Icons (ver. "
-        __QBP_DEFINE_PREFIX___BREEZE_ICONS_VERSION
+        __QBP_MACRO_PREFIX___BREEZE_ICONS_VERSION
         ")</a> "
         "by the <a href=\"http://www.kde.org/\">KDE® Community</a></li>"
         "</ul>"
         "<hr>"
-        __QBP_DEFINE_PREFIX___APP_COPYRIGHT
+        __QBP_MACRO_PREFIX___APP_COPYRIGHT
         "<br><br>"
         "This program is free software: you can redistribute it and/or modify "
         "it under the terms of the GNU General Public License as published by "
@@ -125,7 +125,7 @@ namespace Widgets
 
 
   void
-  MainWindow::on_action_AboutQt_triggered (void)
+  MainWindow::on_about_qt_action_triggered (void)
   {
     QApplication::aboutQt ();
   }

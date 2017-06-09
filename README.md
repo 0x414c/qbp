@@ -1,11 +1,11 @@
 # QBP
 Template-based project generator for Qt apps.
 
-Uses [Breeze](http://api.kde.org/frameworks/breeze-icons/html/) icons by the [KDE® Community](http://www.kde.org/).
+Uses [Breeze](http://api.kde.org/frameworks/breeze-icons/html/) icons by the [KDEÂ® Community](http://www.kde.org/).
 
 # Features
-Currently supports only 2 templates:
-* Qt Widgets
+Currently supports only 2 kinds of templates:
+* Qt Widgets app
 * Qt console app
 
 # Usage

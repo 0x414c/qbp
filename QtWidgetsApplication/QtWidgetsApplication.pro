@@ -108,17 +108,18 @@ CONFIG(release, release | debug) {
 
 SOURCES += \
   sources/main.cxx \
-  sources/utils/utils.cxx \
-  sources/widgets/mainwindow.cxx
+  sources/utils/application.cxx \
+  sources/widgets/main-window.cxx
 
 HEADERS += \
-  sources/constants.hxx \
+  sources/config/application.hxx \
+  sources/config/main-window.hxx \
   sources/definitions.hxx \
-  sources/utils/utils.hxx \
-  sources/widgets/mainwindow.hxx
+  sources/utils/application.hxx \
+  sources/widgets/main-window.hxx
 
 FORMS += \
-  forms/mainwindow.ui
+  forms/main-window.ui
 
 RESOURCES += \
   resources/resources.qrc
